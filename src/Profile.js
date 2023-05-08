@@ -1,17 +1,18 @@
 import React from 'react'
-
+import {PropTypes} from "prop-types"
 
 
 
 
 const Profile = ({name,prof,portfolio, handleName}) => {
-    console.log("props :", {name,prof})
+    console.log("props :", {name,prof, portfolio, handleName})
   return (
     <div>
       <div className='testStyle' style={{color:"green"}}>Hello!{name}<br/>{prof}<br/>{portfolio}
     </div>
-    <button onClick={handleName}>click me</button>
-    
+    <button onClick={() => handleName(name)}>click me</button>
+  
+
     </div>
   )
 }
@@ -19,13 +20,13 @@ const Profile = ({name,prof,portfolio, handleName}) => {
    Profile.defaultProps = {
     name:"sana",
     prof:"sana",
-    handleName : () => alert ("Hello"),
-    
+    handleName : (fname) => alert(`Hello ${fname}`),
    }
-   Profile.PropTypes = {
+
+   Profile.propTypes = {
     name: PropTypes.string,
     prof: PropTypes.string,
-    
+    handleName: PropTypes.func,
    }
   
 

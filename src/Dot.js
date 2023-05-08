@@ -1,9 +1,10 @@
-import React, {Children} from 'react'
+import React from 'react'
 
-const Dot = ({Children}) => {
+const Dot = ({children}) => {
+  console.log("children from Dot :", children)
   return (
     <div>
-   Bye {Children}
+   Bye {children}
     </div>
   )
 }
